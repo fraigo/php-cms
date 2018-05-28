@@ -1,0 +1,36 @@
+{
+  "get" : {
+    "/" : {
+      "component" : "app",
+      "content" : [
+        {
+          "component" : "header",
+          "content" : "App demo"
+        },
+        {
+          "component" : "nav",
+          "items" : [
+            {
+              "component": "navitem",
+              "label" : "Home",
+              "url" : "home"
+            },
+            {
+              "component": "navitem",
+              "label" : "About",
+              "url" : "about"
+            }
+          ]
+        }
+      ]
+    },
+    "/about" : {
+      "component" : "app",
+      "content" : [
+        {
+          "component" : "about"
+        }
+      ]
+    }
+  }
+}

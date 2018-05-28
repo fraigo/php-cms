@@ -1,0 +1,13 @@
+{ 
+  "template" : "lib/templates/views/index.html",
+  "title" : "App demo",
+  "description" : "PHP CMS application demo",
+  "lang" : "en",
+  "icon": {
+    "url": "",
+    "width" : 256,
+    "height" : 256
+  },
+  "content" : []
+    
+}

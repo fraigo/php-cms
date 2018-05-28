@@ -1,0 +1,4 @@
+{
+  "template" : "lib/templates/views/header.html",
+  "content" : "App Header"
+}
