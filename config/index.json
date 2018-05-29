@@ -1,36 +1,33 @@
 {
   "get" : {
+    
     "/" : {
       "component" : "app",
       "content" : [
         {
-          "component" : "header",
-          "content" : "App demo"
-        },
-        {
-          "component" : "nav",
-          "items" : [
+          "component":"app/layout",
+          "body":[
             {
-              "component": "navitem",
-              "label" : "Home",
-              "url" : "home"
-            },
-            {
-              "component": "navitem",
-              "label" : "About",
-              "url" : "about"
+              "component":"app/home"
             }
           ]
         }
       ]
     },
+    
     "/about" : {
       "component" : "app",
       "content" : [
         {
-          "component" : "about"
+          "component" : "app/layout",
+          "body": [
+            {
+              "component":"app/about"
+            }
+          ]
         }
       ]
     }
+
   }
 }

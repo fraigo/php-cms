@@ -1,5 +1,5 @@
 {
-  "template" : "lib/templates/views/navitem.html",
+  "templateFile" : "lib/templates/views/navitem.html",
   "label" : "",
   "url" : ""
 }

@@ -1,0 +1,27 @@
+{
+  "templateFile" : "lib/templates/views/app/layout.html",
+  "header":[
+    {
+      "component" : "header",
+      "content" : "App demo"
+    }
+  ],
+  "nav":[
+    {
+      "component" : "nav",
+      "items" : [
+        {
+          "component": "navitem",
+          "label" : "Home",
+          "url" : "home"
+        },
+        {
+          "component": "navitem",
+          "label" : "About",
+          "url" : "about"
+        }
+      ]
+    }
+  ],
+  "body":""
+}

@@ -1,4 +1,4 @@
 {
-  "template" : "lib/templates/views/nav.html",
+  "templateFile" : "lib/templates/views/nav.html",
   "items" : []
 }

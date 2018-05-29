@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL & ~E_NOTICE);
 define("BASEDIR",realpath(dirname(dirname(__FILE__))));
 
 // Request 
@@ -43,8 +43,7 @@ function cms_route_config($route){
   return $routeConfig;
 }
 
-function cms_template($file,$data=[]){
-  $template = cms_file($file);
+function cms_template($template,$data=[]){
   $matches=[];
   $vars = preg_match_all("/\{\{([^\{]+)\}\}/",$template,$matches);
   $originals= $matches[0];
@@ -58,7 +57,13 @@ function cms_template($file,$data=[]){
         foreach($content as $idx => $item ){
           $config = cms_config("components/".$item["component"]);
           $config = array_merge($config,$item);
-          $result .= cms_template($config["template"],$config); 
+          if ($config["templateFile"]){
+            $templateData=cms_file($config["templateFile"]);
+          }
+          else if ($config["template"]){
+            $templateData=$config["template"];
+          }
+          $result .= cms_template($templateData,$config); 
         }
         $content = $result;
       }
@@ -72,6 +77,12 @@ function cms_view($route,$params=[]){
   $routeConfig = cms_route_config($route);
   $config = cms_config("components/".$routeConfig["component"]);
   $config = array_merge($config,$routeConfig);
-  $template = cms_template($config["template"],$config);
+  if ($config["templateFile"]){
+    $templateData=cms_file($config["templateFile"]);
+  }
+  else if ($config["template"]){
+    $templateData=$config["template"];
+  }
+  $template = cms_template($templateData,$config);
   return $template;
 }

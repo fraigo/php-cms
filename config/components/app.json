@@ -1,5 +1,5 @@
 { 
-  "template" : "lib/templates/views/index.html",
+  "templateFile" : "lib/templates/views/index.html",
   "title" : "App demo",
   "description" : "PHP CMS application demo",
   "lang" : "en",
